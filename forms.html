@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML Forms</title>
+
+    <link rel="stylesheet" href="css/forms.css">
+
+</head>
+
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <h2>HTML <span>Forms</span></h2>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="elements.html">Elements</a>
+            <a href="forms.html">Forms</a>
+            <a href="lists.html">Lists</a>
+            <a href="media.html">Media</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <h1>Input Controls 🎛️</h1>
+
+    <p class="intro">
+        Forms allow users to enter and submit information.
+    </p>
+
+
+    <form>
+
+        <!-- Name -->
+
+        <label>Full Name</label>
+
+        <input
+            type="text"
+            placeholder="Enter your name"
+        >
+
+
+        <!-- Email -->
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            placeholder="example@gmail.com"
+        >
+
+
+        <!-- Password -->
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            placeholder="Enter password"
+        >
+
+
+        <!-- Mobile -->
+
+        <label>Mobile Number</label>
+
+        <input
+            type="tel"
+            placeholder="9876543210"
+        >
+
+
+        <!-- Date -->
+
+        <label>Date of Birth</label>
+
+        <input type="date" placeholder="Select your date of birth">
+
+
+        <!-- Number -->
+
+        <label>Age</label>
+
+        <input
+            type="number"
+            min="1"
+            max="100"
+            placeholder="Inter your Number"
+        >
+
+
+        <!-- Radio -->
+
+        <label>Gender</label>
+
+        <div class="radio-group">
+
+            <label>
+                <input type="radio" name="gender">
+                Male
+            </label>
+
+            <label>
+                <input type="radio" name="gender">
+                Female
+            </label>
+
+        </div>
+
+
+        <!-- Checkbox -->
+
+        <label>Skills</label>
+
+        <div class="check-group">
+
+            <label>
+                <input type="checkbox">
+                HTML
+            </label>
+
+            <label>
+                <input type="checkbox">
+                CSS
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Python
+            </label>
+
+        </div>
+
+
+        <!-- Select -->
+
+        <label for="course">Choose Course</label>
+
+        <select id="course" name="course">
+
+            <option value="">Select Course</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+
+        </select>
+
+
+        <!-- Textarea -->
+
+        <label>Address</label>
+
+        <textarea
+            rows="5"
+            placeholder="Enter your address">
+        </textarea>
+
+
+        <!-- File -->
+
+        <label>Upload Resume</label>
+
+        <input type="file" placeholder="Upload your resume">
+
+
+        <!-- Submit -->
+
+        <button type="submit">
+            Submit Form 🚀
+        </button>
+
+        <button type="reset" class="reset">
+            Reset
+        </button>
+
+    </form>
+
+</main>
+
+
+<footer>
+
+    <p>Forms collect information from users.</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8ff;
+    color: #202040;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background: white;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #6c63ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #6c63ff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef0ff,
+            #ffffff,
+            #f4eaff
+        );
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.small-title {
+    color: #6c63ff;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    display: block;
+    color: #6c63ff;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 25px;
+    margin-right: 10px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.primary {
+    background: #6c63ff;
+    color: white;
+}
+
+.primary:hover {
+    background: #5148e5;
+}
+
+.secondary {
+    border: 2px solid #6c63ff;
+    color: #6c63ff;
+}
+
+.secondary:hover {
+    background: #6c63ff;
+    color: white;
+}
+
+
+/* =========================
+   DIAGRAM
+========================= */
+
+.web-diagram {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    color: white;
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.html {
+    background: #ff7043;
+}
+
+.css {
+    background: #2196f3;
+}
+
+.website {
+    background: #6c63ff;
+}
+
+.plus,
+.equals {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   LEARNING SECTION
+========================= */
+
+.learning {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.learning h2 {
+    font-size: 35px;
+}
+
+.section-text {
+    margin: 15px 0 40px;
+    color: #666;
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+
+    width: 30%;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    font-size: 45px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #202040;
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

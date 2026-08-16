@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0f1ff,
+            #ffffff
+        );
+
+    color: #222;
+}
+
+
+/* Navbar */
+
+.navbar {
+    background: white;
+
+    padding: 20px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.navbar h2 span {
+    color: #6c63ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #6c63ff;
+}
+
+
+/* Main */
+
+main {
+    padding: 60px 10%;
+}
+
+main h1 {
+    text-align: center;
+
+    font-size: 45px;
+
+    color: #302f55;
+}
+
+.intro {
+    text-align: center;
+
+    color: #666;
+
+    margin: 15px 0 40px;
+}
+
+
+/* Form */
+
+form {
+    max-width: 750px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.1);
+}
+
+
+/* Labels */
+
+form > label {
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+
+/* Inputs */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color: #6c63ff;
+
+}
+
+
+/* Radio & Checkbox */
+
+.radio-group,
+.check-group {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 10px;
+}
+
+.radio-group label,
+.check-group label {
+
+    font-weight: normal;
+}
+
+
+/* Buttons */
+
+button {
+
+    margin-top: 30px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #6c63ff;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+
+    background: #5148e5;
+
+}
+
+.reset {
+
+    background: #e74c3c;
+
+    margin-left: 10px;
+}
+
+
+/* Footer */
+
+footer {
+
+    background: #202040;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 50px;
+}
