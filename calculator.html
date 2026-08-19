@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+        }
+
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 320px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            border: none;
+            background: #f0f0f0;
+            border-radius: 5px;
+            text-align: right;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .number, .operator {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .operator {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        .equals {
+            background: #48bb78;
+            color: white;
+            font-weight: bold;
+            grid-column: span 2;
+        }
+
+        .clear {
+            background: #f56565;
+            color: white;
+            font-weight: bold;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" placeholder="0" readonly>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendOperator('/')">/</button>
+            <button class="operator" onclick="appendOperator('*')">*</button>
+            
+            <button class="number" onclick="appendNumber('7')">7</button>
+            <button class="number" onclick="appendNumber('8')">8</button>
+            <button class="number" onclick="appendNumber('9')">9</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+            
+            <button class="number" onclick="appendNumber('4')">4</button>
+            <button class="number" onclick="appendNumber('5')">5</button>
+            <button class="number" onclick="appendNumber('6')">6</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+            
+            <button class="number" onclick="appendNumber('1')">1</button>
+            <button class="number" onclick="appendNumber('2')">2</button>
+            <button class="number" onclick="appendNumber('3')">3</button>
+            <button class="number" onclick="appendNumber('.')">.</button>
+            
+            <button class="number" onclick="appendNumber('0')">0</button>
+            <button class="equals" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+
+        function appendNumber(num) {
+            if (display.value === '0' && num !== '.') {
+                display.value = num;
+            } else if (num === '.' && display.value.includes('.')) {
+                return;
+            } else {
+                display.value += num;
+            }
+        }
+
+        function appendOperator(op) {
+            if (display.value === '') return;
+            display.value += op;
+        }
+
+        function calculate() {
+            try {
+                const result = eval(display.value);
+                display.value = result;
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+        
+        function clearDisplay() {
+            display.value = '0';
+        }
+
+        function deleteLastCharacter() {
+            if (display.value.length > 1) {
+                display.value = display.value.slice(0, -1);
+            } else {
+                display.value = '0';
+            }
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+
+            // Numbers 0-9
+            if (key >= '0' && key <= '9') {
+                appendNumber(key);
+                event.preventDefault();
+            }
+            // Decimal point
+            else if (key === '.') {
+                appendNumber('.');
+                event.preventDefault();
+            }
+            // Operators
+            else if (key === '+' || key === '-' || key === '*' || key === '/') {
+                appendOperator(key);
+                event.preventDefault();
+            }
+            // Calculate on Enter or =
+            else if (key === 'Enter' || key === '=') {
+                calculate();
+                event.preventDefault();
+            }
+            // Clear on Escape or c/C
+            else if (key === 'Escape' || key.toLowerCase() === 'c') {
+                clearDisplay();
+                event.preventDefault();
+            }
+            // Delete last character on Backspace
+            else if (key === 'Backspace') {
+                deleteLastCharacter();
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
