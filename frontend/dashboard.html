@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="dashboard-body">
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>⚡</span> EduSphere
+        </div>
+
+        <div class="nav-right">
+
+            <span id="navName">
+                Student
+            </span>
+
+            <button
+                class="logout-btn"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                STUDENT PORTAL
+            </p>
+
+            <h1>
+                Welcome back,
+                <span id="studentName">
+                    Student
+                </span> 👋
+            </h1>
+
+            <p>
+                Keep learning. Keep building.
+                Your next achievement is waiting.
+            </p>
+
+        </div>
+
+
+        <div class="hero-circle">
+
+            <div class="circle-content">
+
+                🚀
+
+                <span>
+                    Keep Growing
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <div class="icon">📚</div>
+
+            <h2>12</h2>
+
+            <p>Courses</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="icon">🎯</div>
+
+            <h2>86%</h2>
+
+            <p>Progress</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="icon">🏆</div>
+
+            <h2>08</h2>
+
+            <p>Achievements</p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="icon">🔥</div>
+
+            <h2>14</h2>
+
+            <p>Day Streak</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+
+    <section class="dashboard-content">
+
+
+        <!-- COURSES -->
+
+        <div class="section-box">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-title">
+                        CONTINUE LEARNING
+                    </p>
+
+                    <h2>
+                        Your Courses
+                    </h2>
+
+                </div>
+
+                <button class="view-btn">
+                    View All
+                </button>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        HTML • CSS • JavaScript
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar web">
+                        </div>
+
+                    </div>
+
+                    <small>
+                        82% completed
+                    </small>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        ☁
+                    </div>
+
+                    <h3>
+                        AWS Fundamentals
+                    </h3>
+
+                    <p>
+                        Cloud • EC2 • S3
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar aws">
+                        </div>
+
+                    </div>
+
+                    <small>
+                        64% completed
+                    </small>
+
+                </div>
+
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+                        ⚙
+                    </div>
+
+                    <h3>
+                        DevOps
+                    </h3>
+
+                    <p>
+                        Git • Docker • CI/CD
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar devops">
+                        </div>
+
+                    </div>
+
+                    <small>
+                        48% completed
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-box">
+
+            <div class="profile-avatar">
+                👨‍💻
+            </div>
+
+            <h2 id="profileName">
+                Student
+            </h2>
+
+            <p id="profileEmail">
+                student@email.com
+            </p>
+
+            <div class="profile-line"></div>
+
+            <div class="profile-info">
+
+                <span>🎓 Course</span>
+
+                <strong id="profileCourse">
+                    Web Development
+                </strong>
+
+            </div>
+
+
+            <div class="profile-info">
+
+                <span>📅 Status</span>
+
+                <strong>
+                    Active
+                </strong>
+
+            </div>
+
+
+            <button class="profile-btn">
+                View Profile
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 EduSphere • Learn. Build. Grow.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        // Get logged-in student
+
+        const student =
+            JSON.parse(
+                localStorage.getItem("student")
+            );
+
+
+        // If user is not logged in
+
+        if (!student) {
+
+            window.location.href =
+                "login.html";
+
+        }
+
+
+        // Display student information
+
+        document.getElementById(
+            "studentName"
+        ).textContent = student.name;
+
+
+        document.getElementById(
+            "navName"
+        ).textContent = student.name;
+
+
+        document.getElementById(
+            "profileName"
+        ).textContent = student.name;
+
+
+        document.getElementById(
+            "profileEmail"
+        ).textContent = student.email;
+
+
+        document.getElementById(
+            "profileCourse"
+        ).textContent = student.course;
+
+
+        // Logout
+
+        function logout() {
+
+            localStorage.removeItem(
+                "student"
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
